@@ -1,0 +1,99 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rapats",
+  "info": {
+    "singularName": "rapat",
+    "pluralName": "rapats",
+    "displayName": "Rapat",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nama": {
+      "type": "string",
+      "unique": false,
+      "required": true
+    },
+    "pimpinan": {
+      "type": "string",
+      "required": true
+    },
+    "jenis": {
+      "type": "enumeration",
+      "enum": [
+        "offline",
+        "online"
+      ],
+      "required": true
+    },
+    "tempat": {
+      "type": "text",
+      "required": true
+    },
+    "agenda_rapat": {
+      "type": "string",
+      "required": true
+    },
+    "file_risalah": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "file_bahan": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "slug_rapat": {
+      "type": "string",
+      "required": true
+    },
+    "jadwal_rapat": {
+      "type": "datetime",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "rapat"
+    },
+    "file_dokumentasi": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ]
+    },
+    "unit": {
+      "type": "string",
+      "required": true
+    },
+    "presenses": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::presensi.presensi",
+      "mappedBy": "rapat"
+    },
+    "pembuat": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

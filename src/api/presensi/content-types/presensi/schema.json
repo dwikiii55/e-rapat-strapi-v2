@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "presensis",
+  "info": {
+    "singularName": "presensi",
+    "pluralName": "presensis",
+    "displayName": "Presensi",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "nama_peserta": {
+      "type": "string",
+      "required": true
+    },
+    "unit_kerja": {
+      "type": "string",
+      "required": true
+    },
+    "signature_url": {
+      "type": "text",
+      "required": true
+    },
+    "rapat": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::rapat.rapat",
+      "inversedBy": "presenses"
+    },
+    "slug_rapat": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

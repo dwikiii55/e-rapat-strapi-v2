@@ -1,0 +1,28 @@
+{
+  "kind": "singleType",
+  "collectionName": "app_consts",
+  "info": {
+    "singularName": "app-const",
+    "pluralName": "app-consts",
+    "displayName": "AppConst",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "app_name": {
+      "type": "string"
+    },
+    "contact_person_number": {
+      "type": "string"
+    },
+    "root_url_frontend": {
+      "type": "string"
+    },
+    "app_desc": {
+      "type": "text"
+    }
+  }
+}
